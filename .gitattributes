@@ -1,4 +1,4 @@
-* linguist-vendored
+*.python linguist-vendored=true
 *.cpp linguist-vendored=false
 *.cxx linguist-vendored=false
 *.i linguist-vendored=false
