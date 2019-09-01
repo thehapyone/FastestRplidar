@@ -23,10 +23,6 @@ if __name__ == '__main__':
     # connects the lidar using the default port (/dev/ttyUSB0)
     lidar.connect()
     
-    # Get the Lidar health info
-    info = lidar.get_info()
-    print("info - ", info)
-
     # Gets the state of the lidar health
     health = lidar.get_health()
     print("Health - ", health)
