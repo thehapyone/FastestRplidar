@@ -1,3 +1,7 @@
 * linguist-vendored
 *.cpp linguist-vendored=false
 *.cxx linguist-vendored=false
+*.i linguist-vendored=false
+*.h linguist-vendored=false
+*.so linguist-vendored=false
+*.a linguist-vendored=false
