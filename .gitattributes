@@ -1,7 +1,7 @@
-*.python linguist-vendored=true
-*.cpp linguist-vendored=false
-*.cxx linguist-vendored=false
-*.i linguist-vendored=false
-*.h linguist-vendored=false
-*.so linguist-vendored=false
-*.a linguist-vendored=false
+*.python linguist-detectable=true
+*.cpp linguist-detectable=false
+*.cxx linguist-detectable=false
+*.i linguist-detectable=false
+*.h linguist-detectable=false
+*.so linguist-detectable=false
+*.a linguist-detectable=false
