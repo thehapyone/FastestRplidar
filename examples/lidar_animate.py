@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 '''Animates distances and measurment quality'''
 from myRplidar import RPlidar
 import matplotlib.pyplot as plt
@@ -6,7 +7,7 @@ import numpy as np
 import matplotlib.animation as animation
 import time
 
-
+# PORT_NAME is not used. The default port (ttyUSB0) is used.
 PORT_NAME = '/dev/ttyUSB0'
 DMAX = 4000
 IMIN = 50
@@ -35,7 +36,6 @@ def update_line(num, iterator, line):
         #print (meas[2]*np.cos(np.radians(meas[1])), meas[2]*np.sin(np.radians(meas[1])))
     offsets2 = np.array([(np.radians(meas[1]), meas[2]) for meas in scan])
     # convert polar to Cartesian
-    #offsets = np.array([(meas[2]*np.cos(np.radians(meas[1])), meas[2]*np.sin(np.radians(meas[1]))) for meas in scan])
     offsets = np.array([(meas[2]*np.sin(np.radians(meas[1])), meas[2]*np.cos(np.radians(meas[1]))) for meas in scan])
 
     if save_scan:
