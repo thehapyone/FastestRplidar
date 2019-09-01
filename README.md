@@ -21,7 +21,7 @@ The idea of using C++ for the underlying codebase is to give it the performance 
 
 ## Re-Compiling
 
-Re-Compiling is easy and staight forward. You will require [SWIG](http://www.swig.org/>) installed, and have the [Slamtec RPLIDAR Public SDK for C++ available](https://github.com/slamtec/rplidar_sdk) Not really needed, I have included the compiled [static library file](https://github.com/thehapyone/FastestRplidar/blob/master/librplidar_sdk.a). To re-compile, go to the [source directory](https://github.com/thehapyone/FastestRplidar/tree/master/source) and download the source files. Navigate to the source directory use the code below in terminal.
+Re-Compiling is easy and staight forward. You will require [SWIG](http://www.swig.org/>) installed, and have the [Slamtec RPLIDAR Public SDK for C++ available](https://github.com/slamtec/rplidar_sdk) Not really needed, I have included the compiled [static library file](https://github.com/thehapyone/FastestRplidar/blob/master/librplidar_sdk.a). To re-compile, go to the [source directory](https://github.com/thehapyone/FastestRplidar/tree/master/source(for%20recompiling)) and download the source files. Navigate to the source directory use the code below in terminal.
 
 ```C++
 // generates the wrapper code. It will generate fastestrplidar_wrap.cxx
