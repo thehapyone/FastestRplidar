@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
-'''Animates distances and measurment quality'''
+'''
+
+ - Animates distances and measurment quality
+ - Saves scan data to a file
+ 
+ @authur : Ayo Ayibiowu
+ @email : charlesayibiowu@hotmail.com
+    
+'''
+
 from myRplidar import RPlidar
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,25 +35,23 @@ saved = False
 def update_line(num, iterator, line):
     scan = next(iterator)
     global save_scan, saved
+    
+    # enable or disable saving of scan data to file
     if len(scan) >= scan_len:
+        # To be able to save scan data to file. Change this to True. i.e save_scan = True
         save_scan = False
         if saved:
             save_scan = False
 
-    #for meas in scan:
-        #print (means[0], means[1], means[2])
-        #print (meas[2]*np.cos(np.radians(meas[1])), meas[2]*np.sin(np.radians(meas[1])))
     offsets2 = np.array([(np.radians(meas[1]), meas[2]) for meas in scan])
     # convert polar to Cartesian
     offsets = np.array([(meas[2]*np.sin(np.radians(meas[1])), meas[2]*np.cos(np.radians(meas[1]))) for meas in scan])
 
+    # saves scan data
     if save_scan:
         if offsets2.shape[0] >= 300:
-            f = open("scan9.txt", "wb")
-            #print (offsets2)
-            #print (offsets2.shape)
-            #print (offsets2.dtype)
-            #np.savetxt(f, offsets, delimiter=';', fmt='%s', newline='\n')
+            f = open("lidar_scan_data.txt", "wb")
+            # save to file
             np.savetxt(f, offsets2)
             f.close()
             print ('save scan data')
@@ -80,22 +87,6 @@ def run():
         fargs=(iterator, line), interval=50)
     plt.show()
     lidar.stopmotor()
-
-def run2():
-    lidar = RPlidar(PORT_NAME)
-    # Connect the robot
-    lidar.connect()
-    lidar.startmotor()
-    iterator = lidar.iter_scans()
-    while True:
-        old = time.time()
-        scan = next(iterator)
-        new = time.time()
-        delta = new - old
-        print('%.2f Hz, %.2f RPM' % (1 / delta, 60 / delta))
-        #for means in scan:
-            #print (means[0], means[1], means[2])
-
 
 if __name__ == '__main__':
     run()
