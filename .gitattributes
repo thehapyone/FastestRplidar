@@ -1,7 +1,1 @@
-*.python linguist-detectable=true
-*.cpp linguist-detectable=false
-*.cxx linguist-detectable=false
-*.i linguist-detectable=false
-*.h linguist-detectable=false
-*.so linguist-detectable=false
-*.a linguist-detectable=false
+
