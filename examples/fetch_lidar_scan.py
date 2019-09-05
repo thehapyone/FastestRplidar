@@ -28,7 +28,7 @@ if __name__ == '__main__':
     print("Health - ", health)
     
     # connects the lidar using the default port (tty/USB0)
-    lidar.connectlidar()
+    lidar.connect()
     # Starts the lidar motor
     lidar.startmotor()
     
