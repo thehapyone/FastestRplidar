@@ -8,6 +8,8 @@ This library is an extension or a wrapper for the C++ Slamtec RPLIDAR Public SDK
 
 The idea of using C++ for the underlying codebase is to give it the performance boost that was lacking in similar [RPLidar Library](https://github.com/SkoltechRobotics/rplidar). 
 
+You can read more about this library in my blog [thehapyone - A Fast RPLidarA2 Python Library](https://thehapyone.com/a-fast-rplidara2-python-library-for-the-raspberry-pi/)
+
 
 ## Compatibility 
  - Python 3. Won't work with Python 2 unless re-complied.
