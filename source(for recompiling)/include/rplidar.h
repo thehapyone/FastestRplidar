@@ -32,17 +32,13 @@
  *
  */
 
-#include "sdkcommon.h"
-#include "hal/thread.h"
+#pragma once
 
-#if defined(_WIN32)
-#include "arch/win32/winthread.hpp"
-#elif defined(_MACOS)
-#include "arch/macOS/thread.hpp"
-#elif defined(__GNUC__)
-#include "arch/linux/thread.hpp"
-#else
-#error no threading implemention found for this platform.
-#endif
+#include <vector>
+#include "../src/hal/types.h"
+#include "rplidar_protocol.h"
+#include "rplidar_cmd.h"
 
+#include "rplidar_driver.h"
 
+#define RPLIDAR_SDK_VERSION  "1.12.0"

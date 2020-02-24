@@ -27,7 +27,7 @@
 #include <stdlib.h>
 #include <string>
 
-#include "rplidar.h" //RPLIDAR standard sdk, all-in-one header
+#include "include/rplidar.h" //RPLIDAR standard sdk, all-in-one header
 
 using namespace rp::standalone::rplidar;
 
@@ -90,9 +90,9 @@ class FastestRplidar {
 
 			op_result = drv->getHealth(healthinfo);
 			if (IS_OK(op_result)) { // the macro IS_OK is the preperred way to judge whether the operation is succeed.
-				//printf("%d\n", healthinfo.status);
+				printf("%d\n", healthinfo.status);
 				if (healthinfo.status == RPLIDAR_STATUS_ERROR) {
-					// printf("Error1\n");
+					 //printf("Error1\n");
 					// enable the following code if you want rplidar to be reboot by software
 					// drv->reset();
 					return false;

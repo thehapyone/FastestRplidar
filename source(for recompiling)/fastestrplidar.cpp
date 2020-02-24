@@ -27,7 +27,8 @@
 #include <stdlib.h>
 #include <string>
 
-#include "rplidar.h" //RPLIDAR standard sdk, all-in-one header
+
+#include "include/rplidar.h" //RPLIDAR standard sdk, all-in-one header
 #include "fastestrplidar.h"
 
 //using namespace rp::standalone::rplidar;
@@ -170,41 +171,24 @@ string getInfo()
 			op_result = drv->grabScanDataHq(nodes, count);
 						
 			 // Initialize String output Array 
-			//static std::string scan_result[(int)count];
 			static std::string *scan_result = new std::string[(int)count];
 
 			std::string output = "";
 			if (IS_OK(op_result)) {
 				// readjust the scan data
 				drv->ascendScanData(nodes, count);
-				//printf("data supposed length: %d \n",(int)count); 
-					
-				std::string newScan = "1";   
-				//int qualitycount = 0;
+
 				for (int pos = 0; pos < (int)count ; ++pos) {
-					if ((nodes[pos].quality >> RPLIDAR_RESP_MEASUREMENT_QUALITY_SHIFT) > 0)
+				    int quality = nodes[pos].quality >> RPLIDAR_RESP_MEASUREMENT_QUALITY_SHIFT;
+					if (quality > 0)
 					{  
-						//qualitycount++;
 						double distance = nodes[pos].dist_mm_q2/4.0f;
 						double angle = nodes[pos].angle_z_q14 * 90.f / (1 << 14);
-						int quality = nodes[pos].quality >> RPLIDAR_RESP_MEASUREMENT_QUALITY_SHIFT;
-						
-						//std::string s = std::to_string(number);
-						scan_result[pos] = newScan +","+ std::to_string(angle)+"," + std::to_string(distance)+"," + std::to_string(quality)+";";
-						
-						scan_result[pos] = newScan +","+ std::to_string(quality)+ "," +std::to_string(angle)+"," + std::to_string(distance) + ";";
-
-						// reset newscan to false
-						output += scan_result[pos];
-						newScan = "0";
+						output += std::to_string(angle)+"," + std::to_string(distance)+","
+						            + std::to_string(quality)+"\n";
 					}
-					
 				}
-				//printf("len - %d",qualitycount);
-
 			}
-			//return scan_result;
-			// remove last semicolon
 			output.pop_back();
 			return output;
 			
