@@ -27,10 +27,12 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
-
+#include <cmath>
 
 #include "include/rplidar.h" //RPLIDAR standard sdk, all-in-one header
 #include "fastestrplidar.h"
+
+constexpr double deg2rad = M_PI/180.0;
 
 //using namespace rp::standalone::rplidar;
 
@@ -223,6 +225,20 @@ std::vector<std::vector<double>> FastestRplidar::get_scan_as_vectors(bool filter
     return output;
 }
 
-		
+std::vector<std::vector<double>> FastestRplidar::get_scan_as_xy(bool filter_quality)
+{
+    std::vector<std::vector<double>> points = get_scan_as_vectors(filter_quality);
+
+    // allocate output size
+    std::vector<std::vector<double>> output(points.size(), std::vector<double>(2));
+
+    for (unsigned int i = 0; i<points.size(); i++)
+    {
+        output.at(i).at(0) = std::cos(deg2rad*points.at(i).at(0)) * points.at(i).at(1);
+        output.at(i).at(1) = std::sin(deg2rad*points.at(i).at(0)) * points.at(i).at(1);
+    }
+    return output;
+}
+
 	
 

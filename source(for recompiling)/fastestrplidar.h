@@ -141,5 +141,11 @@ class FastestRplidar {
 		 * */
 		std::vector<std::vector<double>> get_scan_as_vectors(bool filter_quality=false);
 
+		/*
+		 * This function will be used in fetching the scan data
+		 * The output is a vector of vectors.
+		 * */
+		std::vector<std::vector<double>> get_scan_as_xy(bool filter_quality=false);
+
 };
 

@@ -427,6 +427,9 @@ class FastestRplidar(_object):
 
     def get_scan_as_vectors(self, filter_quality=False):
         return _fastestrplidar.FastestRplidar_get_scan_as_vectors(self, filter_quality)
+
+    def get_scan_as_xy(self, filter_quality=False):
+        return _fastestrplidar.FastestRplidar_get_scan_as_xy(self, filter_quality)
 FastestRplidar_swigregister = _fastestrplidar.FastestRplidar_swigregister
 FastestRplidar_swigregister(FastestRplidar)
 

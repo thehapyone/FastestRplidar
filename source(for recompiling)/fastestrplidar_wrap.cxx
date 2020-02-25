@@ -11362,6 +11362,105 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_FastestRplidar_get_scan_as_xy__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  FastestRplidar *arg1 = (FastestRplidar *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:FastestRplidar_get_scan_as_xy",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_FastestRplidar, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FastestRplidar_get_scan_as_xy" "', argument " "1"" of type '" "FastestRplidar *""'"); 
+  }
+  arg1 = reinterpret_cast< FastestRplidar * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FastestRplidar_get_scan_as_xy" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (arg1)->get_scan_as_xy(arg2);
+  resultobj = SWIG_NewPointerObj((new std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >(static_cast< const std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >& >(result))), SWIGTYPE_p_std__vectorT_std__vectorT_double_std__allocatorT_double_t_t_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_FastestRplidar_get_scan_as_xy__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  FastestRplidar *arg1 = (FastestRplidar *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:FastestRplidar_get_scan_as_xy",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_FastestRplidar, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FastestRplidar_get_scan_as_xy" "', argument " "1"" of type '" "FastestRplidar *""'"); 
+  }
+  arg1 = reinterpret_cast< FastestRplidar * >(argp1);
+  result = (arg1)->get_scan_as_xy();
+  resultobj = SWIG_NewPointerObj((new std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >(static_cast< const std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >& >(result))), SWIGTYPE_p_std__vectorT_std__vectorT_double_std__allocatorT_double_t_t_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_FastestRplidar_get_scan_as_xy(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[3] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_FastestRplidar, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_FastestRplidar_get_scan_as_xy__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_FastestRplidar, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_FastestRplidar_get_scan_as_xy__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'FastestRplidar_get_scan_as_xy'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    FastestRplidar::get_scan_as_xy(bool)\n"
+    "    FastestRplidar::get_scan_as_xy()\n");
+  return 0;
+}
+
+
 SWIGINTERN PyObject *FastestRplidar_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char *)"O:swigregister", &obj)) return NULL;
@@ -17247,6 +17346,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"FastestRplidar_startmotor", _wrap_FastestRplidar_startmotor, METH_VARARGS, NULL},
 	 { (char *)"FastestRplidar_get_scan_as_lidar_samples", _wrap_FastestRplidar_get_scan_as_lidar_samples, METH_VARARGS, NULL},
 	 { (char *)"FastestRplidar_get_scan_as_vectors", _wrap_FastestRplidar_get_scan_as_vectors, METH_VARARGS, NULL},
+	 { (char *)"FastestRplidar_get_scan_as_xy", _wrap_FastestRplidar_get_scan_as_xy, METH_VARARGS, NULL},
 	 { (char *)"FastestRplidar_swigregister", FastestRplidar_swigregister, METH_VARARGS, NULL},
 	 { (char *)"vector_double_iterator", _wrap_vector_double_iterator, METH_VARARGS, NULL},
 	 { (char *)"vector_double___nonzero__", _wrap_vector_double___nonzero__, METH_VARARGS, NULL},
