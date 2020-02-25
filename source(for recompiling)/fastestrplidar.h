@@ -31,6 +31,12 @@
 
 using namespace rp::standalone::rplidar;
 
+typedef struct lidar_sample
+{
+    double angle;
+    double distance;
+    int quality;
+}lidar_sample;
 
 /* Function to get device info
  * Future updates should provide support for this. 
@@ -125,11 +131,15 @@ class FastestRplidar {
 		void startmotor(int my_scanmode = 2);
 		/*
 		 * This function will be used in fetching the scan data
-		 * The output is a formatted string.
-		 * Output: "newscan,angle,distance,quality"
+		 * The output is a vector of lidar_samples.
 		 * */
-		std::string fetchscandata(void);
-		//int* fetchscandata(void);
-	
+		std::vector<lidar_sample> get_scan_as_lidar_samples(bool filter_quality=false);
+
+		/*
+		 * This function will be used in fetching the scan data
+		 * The output is a vector of vectors.
+		 * */
+		std::vector<std::vector<double>> get_scan_as_vectors(bool filter_quality=false);
+
 };
 

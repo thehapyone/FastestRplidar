@@ -361,6 +361,36 @@ def RPlidarDriver_DisposeDriver(drv):
     return _fastestrplidar.RPlidarDriver_DisposeDriver(drv)
 RPlidarDriver_DisposeDriver = _fastestrplidar.RPlidarDriver_DisposeDriver
 
+class lidar_sample(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, lidar_sample, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, lidar_sample, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["angle"] = _fastestrplidar.lidar_sample_angle_set
+    __swig_getmethods__["angle"] = _fastestrplidar.lidar_sample_angle_get
+    if _newclass:
+        angle = _swig_property(_fastestrplidar.lidar_sample_angle_get, _fastestrplidar.lidar_sample_angle_set)
+    __swig_setmethods__["distance"] = _fastestrplidar.lidar_sample_distance_set
+    __swig_getmethods__["distance"] = _fastestrplidar.lidar_sample_distance_get
+    if _newclass:
+        distance = _swig_property(_fastestrplidar.lidar_sample_distance_get, _fastestrplidar.lidar_sample_distance_set)
+    __swig_setmethods__["quality"] = _fastestrplidar.lidar_sample_quality_set
+    __swig_getmethods__["quality"] = _fastestrplidar.lidar_sample_quality_get
+    if _newclass:
+        quality = _swig_property(_fastestrplidar.lidar_sample_quality_get, _fastestrplidar.lidar_sample_quality_set)
+
+    def __init__(self):
+        this = _fastestrplidar.new_lidar_sample()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _fastestrplidar.delete_lidar_sample
+    __del__ = lambda self: None
+lidar_sample_swigregister = _fastestrplidar.lidar_sample_swigregister
+lidar_sample_swigregister(lidar_sample)
+
 class FastestRplidar(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, FastestRplidar, name, value)
@@ -392,10 +422,352 @@ class FastestRplidar(_object):
     def startmotor(self, my_scanmode=2):
         return _fastestrplidar.FastestRplidar_startmotor(self, my_scanmode)
 
-    def fetchscandata(self):
-        return _fastestrplidar.FastestRplidar_fetchscandata(self)
+    def get_scan_as_lidar_samples(self, filter_quality=False):
+        return _fastestrplidar.FastestRplidar_get_scan_as_lidar_samples(self, filter_quality)
+
+    def get_scan_as_vectors(self, filter_quality=False):
+        return _fastestrplidar.FastestRplidar_get_scan_as_vectors(self, filter_quality)
 FastestRplidar_swigregister = _fastestrplidar.FastestRplidar_swigregister
 FastestRplidar_swigregister(FastestRplidar)
+
+class vector_double(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, vector_double, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, vector_double, name)
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _fastestrplidar.vector_double_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _fastestrplidar.vector_double___nonzero__(self)
+
+    def __bool__(self):
+        return _fastestrplidar.vector_double___bool__(self)
+
+    def __len__(self):
+        return _fastestrplidar.vector_double___len__(self)
+
+    def __getslice__(self, i, j):
+        return _fastestrplidar.vector_double___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _fastestrplidar.vector_double___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _fastestrplidar.vector_double___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _fastestrplidar.vector_double___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _fastestrplidar.vector_double___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _fastestrplidar.vector_double___setitem__(self, *args)
+
+    def pop(self):
+        return _fastestrplidar.vector_double_pop(self)
+
+    def append(self, x):
+        return _fastestrplidar.vector_double_append(self, x)
+
+    def empty(self):
+        return _fastestrplidar.vector_double_empty(self)
+
+    def size(self):
+        return _fastestrplidar.vector_double_size(self)
+
+    def swap(self, v):
+        return _fastestrplidar.vector_double_swap(self, v)
+
+    def begin(self):
+        return _fastestrplidar.vector_double_begin(self)
+
+    def end(self):
+        return _fastestrplidar.vector_double_end(self)
+
+    def rbegin(self):
+        return _fastestrplidar.vector_double_rbegin(self)
+
+    def rend(self):
+        return _fastestrplidar.vector_double_rend(self)
+
+    def clear(self):
+        return _fastestrplidar.vector_double_clear(self)
+
+    def get_allocator(self):
+        return _fastestrplidar.vector_double_get_allocator(self)
+
+    def pop_back(self):
+        return _fastestrplidar.vector_double_pop_back(self)
+
+    def erase(self, *args):
+        return _fastestrplidar.vector_double_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _fastestrplidar.new_vector_double(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x):
+        return _fastestrplidar.vector_double_push_back(self, x)
+
+    def front(self):
+        return _fastestrplidar.vector_double_front(self)
+
+    def back(self):
+        return _fastestrplidar.vector_double_back(self)
+
+    def assign(self, n, x):
+        return _fastestrplidar.vector_double_assign(self, n, x)
+
+    def resize(self, *args):
+        return _fastestrplidar.vector_double_resize(self, *args)
+
+    def insert(self, *args):
+        return _fastestrplidar.vector_double_insert(self, *args)
+
+    def reserve(self, n):
+        return _fastestrplidar.vector_double_reserve(self, n)
+
+    def capacity(self):
+        return _fastestrplidar.vector_double_capacity(self)
+    __swig_destroy__ = _fastestrplidar.delete_vector_double
+    __del__ = lambda self: None
+vector_double_swigregister = _fastestrplidar.vector_double_swigregister
+vector_double_swigregister(vector_double)
+
+class vector_lidar_sample(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, vector_lidar_sample, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, vector_lidar_sample, name)
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _fastestrplidar.vector_lidar_sample_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _fastestrplidar.vector_lidar_sample___nonzero__(self)
+
+    def __bool__(self):
+        return _fastestrplidar.vector_lidar_sample___bool__(self)
+
+    def __len__(self):
+        return _fastestrplidar.vector_lidar_sample___len__(self)
+
+    def __getslice__(self, i, j):
+        return _fastestrplidar.vector_lidar_sample___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _fastestrplidar.vector_lidar_sample___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _fastestrplidar.vector_lidar_sample___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _fastestrplidar.vector_lidar_sample___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _fastestrplidar.vector_lidar_sample___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _fastestrplidar.vector_lidar_sample___setitem__(self, *args)
+
+    def pop(self):
+        return _fastestrplidar.vector_lidar_sample_pop(self)
+
+    def append(self, x):
+        return _fastestrplidar.vector_lidar_sample_append(self, x)
+
+    def empty(self):
+        return _fastestrplidar.vector_lidar_sample_empty(self)
+
+    def size(self):
+        return _fastestrplidar.vector_lidar_sample_size(self)
+
+    def swap(self, v):
+        return _fastestrplidar.vector_lidar_sample_swap(self, v)
+
+    def begin(self):
+        return _fastestrplidar.vector_lidar_sample_begin(self)
+
+    def end(self):
+        return _fastestrplidar.vector_lidar_sample_end(self)
+
+    def rbegin(self):
+        return _fastestrplidar.vector_lidar_sample_rbegin(self)
+
+    def rend(self):
+        return _fastestrplidar.vector_lidar_sample_rend(self)
+
+    def clear(self):
+        return _fastestrplidar.vector_lidar_sample_clear(self)
+
+    def get_allocator(self):
+        return _fastestrplidar.vector_lidar_sample_get_allocator(self)
+
+    def pop_back(self):
+        return _fastestrplidar.vector_lidar_sample_pop_back(self)
+
+    def erase(self, *args):
+        return _fastestrplidar.vector_lidar_sample_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _fastestrplidar.new_vector_lidar_sample(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x):
+        return _fastestrplidar.vector_lidar_sample_push_back(self, x)
+
+    def front(self):
+        return _fastestrplidar.vector_lidar_sample_front(self)
+
+    def back(self):
+        return _fastestrplidar.vector_lidar_sample_back(self)
+
+    def assign(self, n, x):
+        return _fastestrplidar.vector_lidar_sample_assign(self, n, x)
+
+    def resize(self, *args):
+        return _fastestrplidar.vector_lidar_sample_resize(self, *args)
+
+    def insert(self, *args):
+        return _fastestrplidar.vector_lidar_sample_insert(self, *args)
+
+    def reserve(self, n):
+        return _fastestrplidar.vector_lidar_sample_reserve(self, n)
+
+    def capacity(self):
+        return _fastestrplidar.vector_lidar_sample_capacity(self)
+    __swig_destroy__ = _fastestrplidar.delete_vector_lidar_sample
+    __del__ = lambda self: None
+vector_lidar_sample_swigregister = _fastestrplidar.vector_lidar_sample_swigregister
+vector_lidar_sample_swigregister(vector_lidar_sample)
+
+class vector_vector_double(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, vector_vector_double, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, vector_vector_double, name)
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _fastestrplidar.vector_vector_double_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _fastestrplidar.vector_vector_double___nonzero__(self)
+
+    def __bool__(self):
+        return _fastestrplidar.vector_vector_double___bool__(self)
+
+    def __len__(self):
+        return _fastestrplidar.vector_vector_double___len__(self)
+
+    def __getslice__(self, i, j):
+        return _fastestrplidar.vector_vector_double___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _fastestrplidar.vector_vector_double___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _fastestrplidar.vector_vector_double___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _fastestrplidar.vector_vector_double___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _fastestrplidar.vector_vector_double___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _fastestrplidar.vector_vector_double___setitem__(self, *args)
+
+    def pop(self):
+        return _fastestrplidar.vector_vector_double_pop(self)
+
+    def append(self, x):
+        return _fastestrplidar.vector_vector_double_append(self, x)
+
+    def empty(self):
+        return _fastestrplidar.vector_vector_double_empty(self)
+
+    def size(self):
+        return _fastestrplidar.vector_vector_double_size(self)
+
+    def swap(self, v):
+        return _fastestrplidar.vector_vector_double_swap(self, v)
+
+    def begin(self):
+        return _fastestrplidar.vector_vector_double_begin(self)
+
+    def end(self):
+        return _fastestrplidar.vector_vector_double_end(self)
+
+    def rbegin(self):
+        return _fastestrplidar.vector_vector_double_rbegin(self)
+
+    def rend(self):
+        return _fastestrplidar.vector_vector_double_rend(self)
+
+    def clear(self):
+        return _fastestrplidar.vector_vector_double_clear(self)
+
+    def get_allocator(self):
+        return _fastestrplidar.vector_vector_double_get_allocator(self)
+
+    def pop_back(self):
+        return _fastestrplidar.vector_vector_double_pop_back(self)
+
+    def erase(self, *args):
+        return _fastestrplidar.vector_vector_double_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _fastestrplidar.new_vector_vector_double(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x):
+        return _fastestrplidar.vector_vector_double_push_back(self, x)
+
+    def front(self):
+        return _fastestrplidar.vector_vector_double_front(self)
+
+    def back(self):
+        return _fastestrplidar.vector_vector_double_back(self)
+
+    def assign(self, n, x):
+        return _fastestrplidar.vector_vector_double_assign(self, n, x)
+
+    def resize(self, *args):
+        return _fastestrplidar.vector_vector_double_resize(self, *args)
+
+    def insert(self, *args):
+        return _fastestrplidar.vector_vector_double_insert(self, *args)
+
+    def reserve(self, n):
+        return _fastestrplidar.vector_vector_double_reserve(self, n)
+
+    def capacity(self):
+        return _fastestrplidar.vector_vector_double_capacity(self)
+    __swig_destroy__ = _fastestrplidar.delete_vector_vector_double
+    __del__ = lambda self: None
+vector_vector_double_swigregister = _fastestrplidar.vector_vector_double_swigregister
+vector_vector_double_swigregister(vector_vector_double)
 
 # This file is compatible with both classic and new-style classes.
 
