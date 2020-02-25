@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
 from PyQt5.QtCore import QThread, pyqtSignal, QObject
 import pyqtgraph as pg
 import sys
-from fastestrplidar import FastestRplidar
+from source import FastestRplidar
 import time
 import numpy as np
 
