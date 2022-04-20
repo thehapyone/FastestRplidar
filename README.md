@@ -14,6 +14,11 @@ You can read more about this library in my blog [thehapyone - A Fast RPLidarA2 P
 ## Compatibility 
  - Python 3. Won't work with Python 2 unless re-complied.
  - Works only with Raspberry Pis or any other ARM-based processor. To make it work with other platforms like Windows or Linux, you will need to re-compile the C++ code.
+
+## Note - Know Issues
+If you have troubles making this work for your Raspberry PI, it is possible that you will need to re-compile the current binary or you can download the [Originals](https://github.com/thehapyone/FastestRplidar/releases/tag/0.1) release before new changes began to be introducded. That was definetely compiled for the ARM processor.
+
+If you keep getting the error “wrong ELF class: ELFCLASS64” - This is because you are using a binary complied for a different host machine, you will have to re-compile again for your ARM device.
  
 ## Supports
  - Supports reading health
